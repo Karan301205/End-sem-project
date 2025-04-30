@@ -1,0 +1,291 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --primary-gradient: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  --success-gradient: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  color: #2c3e50;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* QR Scanner Styles */
+#qr-reader {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: white;
+  padding: 1rem;
+}
+
+#qr-reader__scan_region {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: var(--shadow-md);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Component Animations */
+.MuiPaper-root {
+  animation: fadeIn 0.3s ease-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.MuiPaper-root:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Animations */
+.MuiButton-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: var(--border-radius);
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.MuiButton-root:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.MuiButton-contained {
+  background: var(--primary-gradient);
+  box-shadow: var(--shadow-sm);
+}
+
+.MuiButton-contained:hover {
+  background: var(--primary-gradient);
+  box-shadow: var(--shadow-md);
+}
+
+/* Success Alert Animation */
+.success-alert {
+  animation: successPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  background: rgba(76, 175, 80, 0.9);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+/* Dialog Animation */
+.MuiDialog-paper {
+  animation: fadeIn 0.3s ease-out;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* List Item Animation */
+.MuiListItem-root {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius);
+  margin: 4px 0;
+}
+
+.MuiListItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateX(5px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* QR Scanner Container Animation */
+.qr-scanner-container {
+  animation: fadeIn 0.5s ease-out;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.qr-scanner-container:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Meal Button Animation */
+.meal-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: var(--border-radius);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.meal-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.meal-button.served {
+  animation: pulse 2s infinite;
+  background: var(--success-gradient);
+  color: white;
+}
+
+/* Success Message Animation */
+.success-message {
+  animation: successPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backdrop-filter: blur(10px);
+  background: rgba(76, 175, 80, 0.9);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+/* Typography Styles */
+.MuiTypography-h4 {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.MuiTypography-h6 {
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+/* Loading Shimmer Effect */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Glass Morphism Effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus States */
+.MuiButton-root:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  :root {
+    --border-radius: 8px;
+  }
+  
+  .MuiPaper-root {
+    margin: 8px;
+  }
+  
+  .MuiButton-root {
+    padding: 8px 16px;
+  }
+}
