@@ -9,9 +9,19 @@ import {
   Button, 
   Paper,
   Alert,
-  Divider
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
 } from '@mui/material';
 import { students } from '../data/students';
+import SchoolIcon from '@mui/icons-material/School';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import QrCodeIcon from '@mui/icons-material/QrCode';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import LogoutIcon from '@mui/icons-material/Logout';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -141,6 +151,85 @@ const Login = () => {
           <Divider sx={{ width: '100%', my: 3 }} />
 
           <Box sx={{ width: '100%', mt: 2 }}>
+            <Typography 
+              variant="h6" 
+              gutterBottom
+              sx={{
+                color: 'primary.main',
+                fontWeight: 'bold',
+                mb: 2
+              }}
+            >
+              How to Use the System
+            </Typography>
+
+            <Paper 
+              elevation={0}
+              sx={{ 
+                p: 2,
+                mb: 2,
+                backgroundColor: 'rgba(25, 118, 210, 0.1)',
+                borderRadius: 'var(--border-radius)'
+              }}
+            >
+              <List>
+                <ListItem>
+                  <ListItemIcon>
+                    <SchoolIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 1: Login as Student" 
+                    secondary="Use the student credentials below to login and get your QR code"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <QrCodeIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 2: Save QR Code" 
+                    secondary="Take a screenshot or note down your QR code from the student dashboard"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <LogoutIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 3: Logout" 
+                    secondary="Click the logout button to return to the login page"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <AdminPanelSettingsIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 4: Login as Admin" 
+                    secondary="Use the admin credentials below to login"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <RestaurantIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 5: Scan & Mark Meal" 
+                    secondary="Scan the student's QR code and select the meal to mark as served"
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <CheckCircleIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="Step 6: Verify" 
+                    secondary="Logout as admin, login as student again to verify the meal status"
+                  />
+                </ListItem>
+              </List>
+            </Paper>
+
             <Typography 
               variant="h6" 
               gutterBottom
