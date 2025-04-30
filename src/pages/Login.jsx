@@ -166,10 +166,10 @@ const Login = () => {
                 Admin Access
               </Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
-                Email: admin@example.com
+                Email: admin123
               </Typography>
               <Typography variant="body2">
-                Password: admin123
+                Password: admin000
               </Typography>
             </Paper>
 
@@ -185,10 +185,10 @@ const Login = () => {
                 Student Access
               </Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
-                Email: student@example.com
+                Email: krn@zxc.com
               </Typography>
               <Typography variant="body2">
-                Password: student123
+                Password: 1234
               </Typography>
             </Paper>
           </Box>
