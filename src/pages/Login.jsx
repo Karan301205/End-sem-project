@@ -25,7 +25,7 @@ const Login = () => {
     setError('');
 
     // Check for admin login
-    if (email === 'admin@example.com' && password === 'admin123') {
+    if (email === 'admin123' && password === 'admin000') {
       login({ email, role: 'admin' });
       navigate('/admin');
       return;

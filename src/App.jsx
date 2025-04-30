@@ -24,7 +24,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={<StudentDashboard />} />
+            <Route path="/student" element={<StudentDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

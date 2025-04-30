@@ -1,8 +1,8 @@
 export const students = [
-  { name: "Karan", phone: "1234", email: "krn@zxc.com" },
-  { name: "Varun", phone: "125432", email: "vrn@zxc.com" },
-  { name: "Kanni", phone: "352132", email: "krn@zxc.com" },
-  { name: "Gyan", phone: "94582", email: "gyn@zxc.com" }
+  { name: "Karan", phone: "1234", email: "krn@zxc.com", password: "1234" },
+  { name: "Varun", phone: "125432", email: "vrn@zxc.com", password: "1234" },
+  { name: "Kanni", phone: "352132", email: "kanni@zxc.com", password: "1234" },
+  { name: "Gyan", phone: "94582", email: "gyn@zxc.com", password: "1234" }
 ];
 
 // Initialize meal status for each student

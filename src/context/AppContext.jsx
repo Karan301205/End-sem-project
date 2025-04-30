@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { students, initializeMealStatus } from '../data/students';
 
 const AppContext = createContext();
@@ -8,16 +8,17 @@ export const AppProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [mealStatus, setMealStatus] = useState(initializeMealStatus());
 
-  const login = (email, password) => {
-    if (email === 'admin123' && password === 'admin000') {
-      setUser({ email: 'admin123', role: 'admin' });
+  const login = (userData) => {
+    if (userData.role === 'admin') {
+      setUser(userData);
       setIsAdmin(true);
       return true;
     }
 
-    const student = students.find(s => s.email === email);
+    // For student login, find the student and verify credentials
+    const student = students.find(s => s.email === userData.email);
     if (student) {
-      setUser(student);
+      setUser({ ...student, role: 'student' });
       setIsAdmin(false);
       return true;
     }
